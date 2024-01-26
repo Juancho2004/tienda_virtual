@@ -1,6 +1,7 @@
 from flask import Flask
 from routes.zapatillas import zapatillas_bp
 from routes.marcas import marcas_bp
+from routes.whatsapp import whatsapp_bp
 from flask_cors import CORS
 from models.zapatilla import db
 
@@ -17,6 +18,7 @@ db.init_app(app)
 # Registra los blueprints
 app.register_blueprint(zapatillas_bp)
 app.register_blueprint(marcas_bp)
+app.register_blueprint(whatsapp_bp)
 
 if __name__ == '__main__':
     app.run(debug=True)

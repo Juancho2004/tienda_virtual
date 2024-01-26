@@ -25,3 +25,16 @@ class MarcaController:
             }
             for zapatilla in zapatillas
         ]
+
+    def get_marcas(self):
+        marcas = Marca.query.all()
+        
+        return [
+                {
+                    'id': marca.id,
+                    'nombre': marca.nombre,
+                    'nombre': marca.nombre,
+                }
+                for marca in marcas
+            ]
+    
